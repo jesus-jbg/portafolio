@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesús Bejarano González | Desarrollador Full Stack Junior</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#6366f1',
+                        darkbg: '#0f172a',
+                        cardbg: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos para animación de scroll (Fade In / Fade Out) -->
+    <style>
+        .fade-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            will-change: opacity, transform;
+        }
+        .fade-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-darkbg dark:text-slate-200 font-sans transition-colors duration-300 antialiased overflow-x-hidden">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="fixed top-0 left-0 w-full bg-white/80 dark:bg-darkbg/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo / Nombre -->
+            <a href="#" class="font-mono font-bold text-lg text-primary tracking-wider">
+                &lt;Jesús Bejarano /&gt;
+            </a>
+
+            <!-- Navegación Escritorio -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#sobre-mi" class="hover:text-primary transition-colors">Sobre mí</a>
+                <a href="#proyectos" class="hover:text-primary transition-colors">Proyectos</a>
+                <a href="#habilidades" class="hover:text-primary transition-colors">Habilidades</a>
+                <a href="#experiencia" class="hover:text-primary transition-colors">Experiencia</a>
+                <a href="#contacto" class="hover:text-primary transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Botón Toggle Modo Oscuro / Claro -->
+            <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors" aria-label="Cambiar tema">
+                <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-lg hidden"></i>
+                <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-lg"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="hero" class="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto fade-scroll">
+            <div class="text-center space-y-6">
+                <div class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-mono font-semibold border border-primary/20">
+                    👋 Hola, soy Jesús Bejarano González
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                    Desarrollador <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Full Stack Junior</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-light">
+                    Titulado en Desarrollo de Aplicaciones Web (DAW) capacitado para la construcción de soluciones software integrales utilizando <strong class="text-slate-800 dark:text-slate-200">Python (Odoo), PHP, Node.js y arquitectura de bases de datos SQL</strong>.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <a href="mailto:jesusjbg93@gmail.com" class="px-6 py-3 rounded-lg bg-primary hover:bg-blue-600 text-white font-medium shadow-lg shadow-primary/25 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Contactar
+                    </a>
+                    <a href="assets/cv.pdf" target="_blank" class="px-6 py-3 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-medium transition-all">
+                        <i class="fa-solid fa-file-arrow-down mr-2"></i> Descargar CV
+                    </a>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="flex justify-center space-x-6 pt-6 text-slate-500 dark:text-slate-400 text-xl">
+                    <a href="https://github.com/" target="_blank" class="hover:text-primary transition-colors" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/" target="_blank" class="hover:text-primary transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:jesusjbg93@gmail.com" class="hover:text-primary transition-colors" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SOBRE MÍ ==================== -->
+        <section id="sobre-mi" class="py-20 border-t border-slate-200 dark:border-slate-800/80 fade-scroll">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold font-mono text-center mb-12">
+                    <span class="text-primary">&lt;/&gt;</span> Sobre mí
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-primary/50 p-1 bg-gradient-to-tr from-primary to-secondary">
+                            <img src="assets/images/foto-perfil.jpg" alt="Jesús Bejarano González" class="w-full h-full object-cover rounded-xl bg-slate-800" onerror="this.src='https://via.placeholder.com/300?text=Jes%C3%BAs+Bejarano'">
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4 text-slate-600 dark:text-slate-300">
+                        <p>
+                            Me llamo <strong class="text-slate-900 dark:text-white">Jesús Bejarano González</strong> y soy Desarrollador Full Stack Junior graduado en el <strong class="text-slate-900 dark:text-white">Grado Superior de Desarrollo de Aplicaciones Web (DAW)</strong>. Cuento con formación práctica en personalización y desarrollo sobre el ERP Odoo con Python, así como en la creación de aplicaciones web con PHP, JavaScript y Node.js.
+                        </p>
+                        <p>
+                            Aporto una trayectoria laboral previa rica y diversa en entornos exigentes que han forjado mi adaptabilidad, capacidad de aprendizaje autónomo y habilidades de resolución de problemas en equipo.
+                        </p>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 font-mono text-sm">
+                            <div class="p-3 rounded-lg bg-slate-100 dark:bg-cardbg border border-slate-200 dark:border-slate-700/50">
+                                <span class="block text-primary text-xl font-bold">DAW</span>
+                                Titulado Técnico
+                            </div>
+                            <div class="p-3 rounded-lg bg-slate-100 dark:bg-cardbg border border-slate-200 dark:border-slate-700/50">
+                                <span class="block text-primary text-xl font-bold">Python</span>
+                                & ERP Odoo
+                            </div>
+                            <div class="p-3 rounded-lg bg-slate-100 dark:bg-cardbg border border-slate-200 dark:border-slate-700/50">
+                                <span class="block text-primary text-xl font-bold">Full Stack</span>
+                                Web Dev
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROYECTOS ==================== -->
+        <section id="proyectos" class="py-20 border-t border-slate-200 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/30 fade-scroll">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold font-mono text-center mb-12">
+                    <span class="text-primary">&lt;/&gt;</span> Proyectos Destacados
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Proyecto 1 -->
+                    <div class="bg-white dark:bg-cardbg rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700/50 shadow-sm hover:shadow-md transition-all">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center text-slate-500 font-mono">
+                            <i class="fa-solid fa-boxes-stacked text-5xl text-primary/40"></i>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Sistema de Gestión de Almacén (Carnicería)</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">
+                                Aplicación web para control de stock por lotes, trazabilidad y caducidades. Incluye seguridad integrada (sentencias preparadas anti-SQLi, hash de contraseñas y protección CSRF).
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 text-xs rounded-md bg-blue-100 dark:bg-blue-950 text-primary font-mono">PHP</span>
+                                <span class="px-2.5 py-1 text-xs rounded-md bg-blue-100 dark:bg-blue-950 text-primary font-mono">MySQL</span>
+                                <span class="px-2.5 py-1 text-xs rounded-md bg-blue-100 dark:bg-blue-950 text-primary font-mono">Seguridad Web</span>
+                            </div>
+                            <div class="pt-4 flex items-center space-x-4 border-t border-slate-100 dark:border-slate-800">
+                                <a href="https://github.com/" target="_blank" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-2">
+                                    <i class="fa-brands fa-github"></i> Código Fuente
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="bg-white dark:bg-cardbg rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700/50 shadow-sm hover:shadow-md transition-all">
+                        <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center text-slate-500 font-mono">
+                            <i class="fa-solid fa-file-invoice-dollar text-5xl text-secondary/40"></i>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Generador de Presupuestos</h3>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm">
+                                Aplicación web con Express y Node.js. Incorpora lógica de negocio en JS, gestión de base de datos relacional ligera (SQLite) y envío automatizado de correos.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 text-xs rounded-md bg-indigo-100 dark:bg-indigo-950 text-secondary font-mono">Node.js</span>
+                                <span class="px-2.5 py-1 text-xs rounded-md bg-indigo-100 dark:bg-indigo-950 text-secondary font-mono">Express</span>
+                                <span class="px-2.5 py-1 text-xs rounded-md bg-indigo-100 dark:bg-indigo-950 text-secondary font-mono">SQLite</span>
+                            </div>
+                            <div class="pt-4 flex items-center space-x-4 border-t border-slate-100 dark:border-slate-800">
+                                <a href="https://github.com/" target="_blank" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary flex items-center gap-2">
+                                    <i class="fa-brands fa-github"></i> Código Fuente
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== HABILIDADES ==================== -->
+        <section id="habilidades" class="py-20 border-t border-slate-200 dark:border-slate-800/80 fade-scroll">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold font-mono text-center mb-12">
+                    <span class="text-primary">&lt;/&gt;</span> Habilidades Técnicas
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="p-5 rounded-xl bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-700/50">
+                        <div class="text-primary text-2xl mb-3"><i class="fa-solid fa-code"></i></div>
+                        <h3 class="font-bold mb-2">Lenguajes</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-mono">
+                            Python, PHP, JavaScript, SQL, Java, C#, HTML5, CSS3, XML
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-700/50">
+                        <div class="text-primary text-2xl mb-3"><i class="fa-solid fa-database"></i></div>
+                        <h3 class="font-bold mb-2">Bases de Datos</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-mono">
+                            MySQL, Oracle (SQL Developer), PL/SQL, SQLite, Modelado de Datos
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-700/50">
+                        <div class="text-primary text-2xl mb-3"><i class="fa-solid fa-gears"></i></div>
+                        <h3 class="font-bold mb-2">ERP & Frameworks</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-mono">
+                            Odoo ERP (Modelos, Vistas, Reglas de Negocio), Node.js, Express
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-700/50">
+                        <div class="text-primary text-2xl mb-3"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3 class="font-bold mb-2">Herramientas</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-mono">
+                            Git, GitHub, Visual Studio, Eclipse, Notepad++, Apache (XAMPP)
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCIA ==================== -->
+        <section id="experiencia" class="py-20 border-t border-slate-200 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-900/30 fade-scroll">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold font-mono text-center mb-12">
+                    <span class="text-primary">&lt;/&gt;</span> Trayectoria
+                </h2>
+                
+                <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 sm:before:left-1/2 before:-translate-x-1/2 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+                    
+                    <!-- Item 1: Prácticas Odoo -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-white font-mono text-xs z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] p-5 rounded-xl bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-700/50 shadow-sm">
+                            <span class="text-xs font-mono text-primary font-semibold">Jun. 2026 - Sep. 2026</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white">Desarrollador Odoo / Python (Prácticas)</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium mb-2">Mimtek</p>
+                            <ul class="text-xs text-slate-600 dark:text-slate-300 list-disc list-inside space-y-1">
+                                <li>Desarrollo y personalización sobre Odoo ERP con Python (métodos de validación y modelos a medida).</li>
+                                <li><strong>Personalización de Firmware/BIOS:</strong> Integración e implantación de logos corporativos de clientes en la BIOS de los sistemas.</li>
+                                <li>Ensamblaje, configuración y despliegue de hardware para clientes.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Educación DAW -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-7 h-7 rounded-full bg-secondary text-white font-mono text-xs z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] p-5 rounded-xl bg-white dark:bg-cardbg border border-slate-200 dark:border-slate-700/50 shadow-sm">
+                            <span class="text-xs font-mono text-secondary font-semibold">2024 - 2026</span>
+                            <h3 class="font-bold text-slate-900 dark:text-white">Grado Superior en Desarrollo de Aplicaciones Web (DAW)</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium mb-2">ILERNA</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-300">
+                                Formación integral en arquitectura de software, desarrollo backend, frontend y bases de datos relacionales.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACTO ==================== -->
+        <section id="contacto" class="py-20 border-t border-slate-200 dark:border-slate-800/80 fade-scroll">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold font-mono mb-4">
+                    <span class="text-primary">&lt;/&gt;</span> Hablemos
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-8 text-sm">
+                    ¿Tienes una oportunidad laboral o un proyecto en mente? ¡Escríbeme!
+                </p>
+                
+                <a href="mailto:jesusjbg93@gmail.com" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary hover:bg-blue-600 text-white font-semibold shadow-lg shadow-primary/25 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-envelope"></i> Enviar Correo Electrónico
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400 font-mono">
+        <p>&copy; 2026 Jesús Bejarano González. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts de Interacción -->
+    <script>
+        // Modo Oscuro / Claro
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        themeToggleBtn.addEventListener('click', function() {
+            document.documentElement.classList.toggle('dark');
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+        });
+
+        // Efecto Fade In / Fade Out al hacer scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-scroll').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
